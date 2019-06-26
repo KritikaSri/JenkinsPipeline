@@ -1,7 +1,7 @@
 pipeline{
        
 	tools{
-		maven 'M2_HOME'
+		maven 'Mymaven'
 		jdk 'JAVA_HOME'
 		}
     	options {
@@ -36,13 +36,13 @@ pipeline{
 			
 		stage('Docker build'){
 			steps{
-			sh 'docker build -t shifalisri0102/my-app:0.1 .'
+			sh 'docker build -t Kritikas/my-app:0.1 .'
 			}
 			}
 		  stage('Upload Image to DockerHub'){
 			steps {
-   				withDockerRegistry([ credentialsId: "dockerhub", url: "" ]) {
-      				sh 'docker push shifalisri0102/my-app:0.1'
+   				withDockerRegistry([ credentialsId: "DockerHub", url: "" ]) {
+      				sh 'docker push Kritikas/my-app:0.1'
 				
   				 }
 				}
