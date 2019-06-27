@@ -17,7 +17,7 @@ pipeline{
         	   stage('Checkout Stage'){
            		steps{
 				cleanWs()
-				
+				git url: 'https://github.com/KritikaSri/JenkinsPipeline.git'
               			sh 'mvn clean'
 				echo '${env.BUILD_ID}'
 	       			}
