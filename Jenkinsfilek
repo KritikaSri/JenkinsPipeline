@@ -36,13 +36,13 @@ pipeline{
 			
 		stage('Docker build'){
 			steps{
-			sh 'docker build -t Kritikas/my-app:0.1 .'
+			sh 'docker build -t kritikas/my-app:0.1 .'
 			}
 			}
 		  stage('Upload Image to DockerHub'){
 			steps {
    				withDockerRegistry([ credentialsId: "DockerHub", url: "" ]) {
-      				sh 'docker push Kritikas/my-app:0.1'
+      				sh 'docker push kritikas/my-app:0.1'
 				
   				 }
 				}
